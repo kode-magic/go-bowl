@@ -7,8 +7,8 @@ import (
 
 func main () {
 	getGst := calculations.CalculateGST(9000, 15)
-	fmt.Printf("Include GST = %f", getGst)
+	fmt.Println(getGst)
 
-	noGst := calculations.RemoveGST(getGst, 15)
-	fmt.Printf("Remove GST = %f", noGst)
+	noGst := calculations.RemoveGST(getGst.AmountWithGst, 15)
+	fmt.Println(noGst)
 }
