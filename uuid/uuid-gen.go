@@ -12,5 +12,15 @@ func GenerateUUID() uuid.UUID {
 	return id
 }
 
+func ConvertToUUID(id string) uuid.UUID {
+	ID, err := uuid.Parse(id)
+
+	if err != nil {
+		return uuid.UUID{}
+	}
+
+	return ID
+}
+
 
 
