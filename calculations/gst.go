@@ -11,6 +11,13 @@ func CalculateGST(amount, gstPercent float64) commons.AddGSTData {
 	}
 }
 
-
+func RemoveGST(gstAmount, gstPercent float64) commons.RemoveGSTData {
+	gst := gstAmount - (gstAmount * (100/ (100 + gstPercent)))
+	amountWithoutGst := gstAmount - gst
+	return commons.RemoveGSTData{
+		Gst: gst,
+		AmountWithoutGst: amountWithoutGst,
+	}
+}
 
 //179126
