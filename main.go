@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/kode-magic/go-bowl/calculations"
-	"github.com/kode-magic/go-bowl/ulid"
+	"github.com/kode-magic/go-bowl/ulids"
 )
 
 func main () {
@@ -13,6 +13,6 @@ func main () {
 	noGst := calculations.RemoveGST(getGst.AmountWithGst, 15)
 	fmt.Println(noGst)
 
-	id := ulid.GenerateUUID()
+	id := ulids.GenerateUUID()
 	fmt.Println("uuid = "+id.String())
 }
