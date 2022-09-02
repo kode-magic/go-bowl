@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/kode-magic/go-bowl/calculations"
+	"github.com/kode-magic/go-bowl/demographics"
 	"github.com/kode-magic/go-bowl/ulids"
 )
 
@@ -15,4 +17,7 @@ func main () {
 
 	id := ulids.GenerateUUID()
 	fmt.Println("uuid = "+id.String())
+
+	demographics.OnFetchCountryRegions("42c441a0-2ad5-11ed-ac47-acde48001122")
+
 }
