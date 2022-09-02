@@ -10,14 +10,14 @@ import (
 
 func AddCountry(country Country) (string, error) {
 	db := connectDemograpgicsDB()
-	country.Id = ulids.GenerateUUID().String()
+	country.ID = ulids.GenerateUUID().String()
 	stmt, err := db.Prepare("INSERT INTO countries(id, name, continent) VALUES (?, ?, ?);")
 
 	if err != nil {
 		return "", err
 	}
 
-	result, resultErr := stmt.Exec(country.Id, country.Nmae, country.Continent)
+	result, resultErr := stmt.Exec(country.ID, country.Name, country.Continent)
 	if resultErr != nil {
 		return "", resultErr
 	}
@@ -26,7 +26,7 @@ func AddCountry(country Country) (string, error) {
 
 	defer stmt.Close()
 
-	return country.Nmae + " successfully added.", nil
+	return country.Name + " successfully added.", nil
 }
 
 func FetchCountries() []Country {
@@ -42,7 +42,7 @@ func FetchCountries() []Country {
 
 	for rows.Next() {
 		country := Country{}
-		err = rows.Scan(&country.Id, &country.Nmae, &country.Continent, &country.CreatedAt, &country.UpdatedAt)
+		err = rows.Scan(&country.ID, &country.Name, &country.Continent, &country.CreatedAt, &country.UpdatedAt)
 		if err != nil {
 			log.Fatal(err)
 		}
