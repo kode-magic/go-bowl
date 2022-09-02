@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/kode-magic/go-bowl/demographics"
+	"fmt"
 )
 
 func main () {
 	// getGst := calculations.CalculateGST(9000, 15)
-	// fmt.Println(getGst)
+	fmt.Println("Hello from GO-BOWL")
 
 	// noGst := calculations.RemoveGST(getGst.AmountWithGst, 15)
 	// fmt.Println(noGst)
@@ -19,6 +19,9 @@ func main () {
 	// demographics.GormCountryList()
 	// demographics.GormAddRegion()
 	// demographics.GormCountryRegions()
-	demographics.GormRegionById()
+	// demographics.GormRegionById()
+	// demographics.GormRegionByName()
+	// demographics.GormAddDistrict()
+	// demographics.GormRegionDistricts()
 
 }

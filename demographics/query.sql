@@ -46,3 +46,5 @@ CREATE TABLE
         updated_at datetime DEFAULT (datetime('now')),
         FOREIGN KEY (country_id) REFERENCES countries (id)
     );
+
+    

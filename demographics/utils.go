@@ -1,20 +1,13 @@
 package demographics
 
 import (
-	"database/sql"
 	"log"
+
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
-func connectDemograpgicsDB() *sql.DB {
-	db, err := sql.Open("sqlite3", "./demographics/demographics.db")
-	CheckErr(err)
-
-	return db
-}
-
-func ConnectGormDB() (*gorm.DB, error){
+func connectGormDB() (*gorm.DB, error) {
 	db, err := gorm.Open(sqlite.Open("./demographics/demographics.db"), &gorm.Config{})
 	CheckErr(err)
 
@@ -23,7 +16,7 @@ func ConnectGormDB() (*gorm.DB, error){
 		&Region{},
 		&District{},
 	)
-  return db, nil
+	return db, nil
 }
 
 func CheckErr(err error) {
