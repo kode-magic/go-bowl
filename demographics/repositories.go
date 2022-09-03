@@ -120,6 +120,5 @@ func ListRegionDistricts(region string) (*[]serialDistrict, error) {
 		serialDistricts[i] = *district.serializeDistrict()
 	}
 
-
 	return &serialDistricts, nil
 }
