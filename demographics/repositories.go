@@ -11,7 +11,7 @@ func CreateCountry(country *Country) (*Country, error) {
 	return country, nil
 }
 
-func ListCountries() (*[]serialCountry, error) {
+func ListCountries() (*[]SerialCountry, error) {
 	db, err := connectGormDB()
 	CheckErr(err)
 	var countries []Country
@@ -20,7 +20,7 @@ func ListCountries() (*[]serialCountry, error) {
 		return nil, fetchErr
 	}
 
-	serialCountries := make([]serialCountry, len(countries))
+	serialCountries := make([]SerialCountry, len(countries))
 	for i, country := range countries {
 		serialCountries[i] = *country.serializeCountry()
 	}
@@ -39,7 +39,7 @@ func AddRegion(region *Region) (*Region, error) {
 	return region, nil
 }
 
-func ListCountryRegions(country string) (*[]serialRegion, error) {
+func ListCountryRegions(country string) (*[]SerialRegion, error) {
 	db, err := connectGormDB()
 	CheckErr(err)
 	var regions []Region
@@ -48,7 +48,7 @@ func ListCountryRegions(country string) (*[]serialRegion, error) {
 		return nil, fetchErr
 	}
 
-	serialRegions := make([]serialRegion, len(regions))
+	serialRegions := make([]SerialRegion, len(regions))
 	for i, region := range regions {
 		serialRegions[i] = *region.serializeRegion()
 	}
@@ -56,7 +56,7 @@ func ListCountryRegions(country string) (*[]serialRegion, error) {
 	return &serialRegions, nil
 }
 
-func GetRegionById(id string) (*serialRegion, error) {
+func GetRegionById(id string) (*SerialRegion, error) {
 	db, err := connectGormDB()
 	CheckErr(err)
 	var region Region
@@ -69,7 +69,7 @@ func GetRegionById(id string) (*serialRegion, error) {
 	return region.serializeRegion(), nil
 }
 
-func GetRegionByName(name string) (*serialRegion, error) {
+func GetRegionByName(name string) (*SerialRegion, error) {
 	db, err := connectGormDB()
 	CheckErr(err)
 	var region Region
@@ -93,7 +93,7 @@ func AddDistrict(district *District) (*District, error) {
 	return district, nil
 }
 
-func GetDistrictById(id string) (*serialDistrict, error) {
+func GetDistrictById(id string) (*SerialDistrict, error) {
 	db, err := connectGormDB()
 	CheckErr(err)
 	var district District
@@ -106,7 +106,7 @@ func GetDistrictById(id string) (*serialDistrict, error) {
 	return district.serializeDistrict(), nil
 }
 
-func ListRegionDistricts(region string) (*[]serialDistrict, error) {
+func ListRegionDistricts(region string) (*[]SerialDistrict, error) {
 	db, err := connectGormDB()
 	CheckErr(err)
 	var districts []District
@@ -115,7 +115,7 @@ func ListRegionDistricts(region string) (*[]serialDistrict, error) {
 		return nil, fetchErr
 	}
 
-	serialDistricts := make([]serialDistrict, len(districts))
+	serialDistricts := make([]SerialDistrict, len(districts))
 	for i, district := range districts {
 		serialDistricts[i] = *district.serializeDistrict()
 	}

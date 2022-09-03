@@ -16,10 +16,10 @@ type (
 		UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"updatedAt"`
 	}
 
-	serialCountry struct {
-		ID        string    `gorm:"type:text;not null;" json:"id"`
-		Name      string    `gorm:"type:varchar(150);not null;" json:"name"`
-		Continent string    `gorm:"type:varchar(150);not null;" json:"continent"`
+	SerialCountry struct {
+		ID        string `gorm:"type:text;not null;" json:"id"`
+		Name      string `gorm:"type:varchar(150);not null;" json:"name"`
+		Continent string `gorm:"type:varchar(150);not null;" json:"continent"`
 	}
 
 	Region struct {
@@ -31,10 +31,10 @@ type (
 		UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"updatedAt"`
 	}
 
-	serialRegion struct {
-		ID        string    `gorm:"type:text;not null;" json:"id"`
-		Name      string    `gorm:"type:varchar(150);not null;" json:"name"`
-		Country string  `gorm:"type:varchar(150);not null;" json:"country"`
+	SerialRegion struct {
+		ID      string `gorm:"type:text;not null;" json:"id"`
+		Name    string `gorm:"type:varchar(150);not null;" json:"name"`
+		Country string `gorm:"type:varchar(150);not null;" json:"country"`
 	}
 
 	District struct {
@@ -46,10 +46,10 @@ type (
 		UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"updatedAt"`
 	}
 
-	serialDistrict struct {
-		ID        string    `gorm:"type:text;not null;" json:"id"`
-		Name      string    `gorm:"type:varchar(150);not null;" json:"name"`
-		Region  string    `gorm:"not null;" json:"region"`
+	SerialDistrict struct {
+		ID     string `gorm:"type:text;not null;" json:"id"`
+		Name   string `gorm:"type:varchar(150);not null;" json:"name"`
+		Region string `gorm:"not null;" json:"region"`
 	}
 )
 
@@ -68,10 +68,10 @@ func (country *Country) Prepare() {
 	country.UpdatedAt = time.Now()
 }
 
-func (country *Country) serializeCountry() *serialCountry {
-	return &serialCountry{
-		ID: country.ID,
-		Name: country.Name,
+func (country *Country) serializeCountry() *SerialCountry {
+	return &SerialCountry{
+		ID:        country.ID,
+		Name:      country.Name,
 		Continent: country.Continent,
 	}
 }
@@ -91,10 +91,10 @@ func (region *Region) Prepare() {
 	region.UpdatedAt = time.Now()
 }
 
-func (region *Region) serializeRegion () *serialRegion {
-	return &serialRegion{
-		ID: region.ID,
-		Name: region.Name,
+func (region *Region) serializeRegion() *SerialRegion {
+	return &SerialRegion{
+		ID:      region.ID,
+		Name:    region.Name,
 		Country: region.Country.Name,
 	}
 }
@@ -114,10 +114,10 @@ func (district *District) Prepare() {
 	district.UpdatedAt = time.Now()
 }
 
-func (district *District) serializeDistrict () *serialDistrict {
-	return &serialDistrict{
-		ID: district.ID,
-		Name: district.Name,
+func (district *District) serializeDistrict() *SerialDistrict {
+	return &SerialDistrict{
+		ID:     district.ID,
+		Name:   district.Name,
 		Region: district.Region.Name,
 	}
 }
