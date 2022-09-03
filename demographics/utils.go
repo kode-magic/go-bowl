@@ -8,7 +8,7 @@ import (
 )
 
 func connectGormDB() (*gorm.DB, error) {
-	db, err := gorm.Open(sqlite.Open("./demographics/demographics.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("./demographics.db"), &gorm.Config{})
 	CheckErr(err)
 
 	db.AutoMigrate(

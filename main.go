@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/kode-magic/go-bowl/demographics"
 )
 
 func main () {
@@ -18,7 +20,7 @@ func main () {
 	// demographics.GormCountryCreate()
 	// demographics.GormCountryList()
 	// demographics.GormAddRegion()
-	// demographics.GormCountryRegions()
+	demographics.GormCountryRegions()
 	// demographics.GormRegionById()
 	// demographics.GormRegionByName()
 	// demographics.GormAddDistrict()
