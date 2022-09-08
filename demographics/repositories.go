@@ -3,24 +3,8 @@ package demographics
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 )
-
-func ListLocalDemographics() Demographics {
-	content, err := ioutil.ReadFile("demo.json")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	var demographics Demographics
-	err = json.Unmarshal(content, &demographics)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	return demographics
-}
 
 func LocalDemographics() Demographics {
 	var demographics Demographics
