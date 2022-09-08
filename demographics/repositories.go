@@ -2,12 +2,12 @@ package demographics
 
 import (
 	"encoding/json"
+	"io/ioutil"
 	"log"
-	"os"
 )
 
 func ListLocalDemographics() Demographics {
-	content, err := os.ReadFile("./demographics/demo.json")
+	content, err := ioutil.ReadFile("./demographics/demo.json")
 	if err != nil {
 		log.Fatal(err)
 	}
