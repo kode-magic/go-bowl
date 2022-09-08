@@ -2,12 +2,13 @@ package demographics
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 )
 
 func ListLocalDemographics() Demographics {
-	content, err := ioutil.ReadFile("./demographics/demo.json")
+	content, err := ioutil.ReadFile("demo.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -37,6 +38,8 @@ func RegionData() []string {
 			list = append(list, item)
 		}
 	}
+
+	fmt.Println(list)
 
 	return list
 }
