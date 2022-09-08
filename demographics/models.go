@@ -51,6 +51,18 @@ type (
 		Name   string `gorm:"type:varchar(150);not null;" json:"name"`
 		Region string `gorm:"not null;" json:"region"`
 	}
+
+	Demographics struct {
+		Demographics []struct {
+			District string `json:"district"`
+			Region   string `json:"region"`
+		} `json:"demographics"`
+	}
+
+	Districts struct {
+		Name   string `json:"name"`
+		Region string `json:"region"`
+	}
 )
 
 func (country *Country) BeforeCreate(_ *gorm.DB) error {
