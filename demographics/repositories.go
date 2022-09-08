@@ -22,8 +22,20 @@ func ListLocalDemographics() Demographics {
 	return demographics
 }
 
+func LocalDemographics() Demographics {
+	var demographics Demographics
+	err := json.Unmarshal([]byte(DemographicsJSON), &demographics)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(demographics)
+
+	return demographics
+}
+
 func RegionData() []string {
-	demographics := ListLocalDemographics()
+	demographics := LocalDemographics()
 	var regions []string
 
 	for _, district := range demographics.Demographics {
@@ -45,7 +57,7 @@ func RegionData() []string {
 }
 
 func DistrictsByRegion(region string) []string {
-	demographics := ListLocalDemographics()
+	demographics := LocalDemographics()
 	var districtData []string
 
 	for _, district := range demographics.Demographics {

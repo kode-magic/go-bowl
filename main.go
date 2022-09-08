@@ -11,7 +11,7 @@ func main() {
 	fmt.Println("***")
 	fmt.Println("***")
 	fmt.Println("***")
-	demographics.RegionData()
+	demographics.LocalDemographics()
 	fmt.Println("*****")
 	fmt.Println("*******")
 	fmt.Println("*********")
