@@ -2,14 +2,17 @@ package demographics
 
 type (
 	Demographics struct {
-		Demographics []struct {
-			District string `json:"district"`
-			Region   string `json:"region"`
-		} `json:"demographics"`
+		Demographics []District `json:"demographics"`
+		//Demographics []struct {
+		//	Region    string   `json:"region"`
+		//	District  string   `json:"district"`
+		//	Chiefdoms []string `json:"chiefdoms"`
+		//} `json:"demographics"`
 	}
 
 	District struct {
-		Name   string `json:"name"`
-		Region string `json:"region"`
+		Region    string   `json:"region"`
+		District  string   `json:"district"`
+		Chiefdoms []string `json:"chiefdoms"`
 	}
 )

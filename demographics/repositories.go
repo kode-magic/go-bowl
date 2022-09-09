@@ -2,7 +2,6 @@ package demographics
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 )
 
@@ -12,8 +11,6 @@ func LocalDemographics() Demographics {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	fmt.Println(demographics)
 
 	return demographics
 }
@@ -35,8 +32,6 @@ func RegionData() []string {
 		}
 	}
 
-	fmt.Println(list)
-
 	return list
 }
 
@@ -52,4 +47,31 @@ func DistrictsByRegion(region string) []string {
 	}
 
 	return districtData
+}
+
+func RegionDistrictData(region string) []District {
+	demographics := LocalDemographics()
+	var districtData []District
+
+	for _, district := range demographics.Demographics {
+		if region == district.Region {
+			districtData = append(districtData, district)
+		}
+	}
+
+	return districtData
+}
+
+func ChiefdomsByDistrict(districtName string) []string {
+	demographics := LocalDemographics()
+	var chiefdomsData []string
+
+	for _, district := range demographics.Demographics {
+		if districtName == district.District {
+			chiefdomsData = district.Chiefdoms
+		}
+
+	}
+
+	return chiefdomsData
 }
