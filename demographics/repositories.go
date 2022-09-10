@@ -62,6 +62,20 @@ func RegionDistrictData(region string) []District {
 	return districtData
 }
 
+func RegionChiefdoms(region string) []string {
+	demographics := LocalDemographics()
+	var chiefdomsData []string
+
+	for _, district := range demographics.Demographics {
+		if region == district.Region {
+			chiefdomsData = append(chiefdomsData, district.Chiefdoms...)
+		}
+
+	}
+
+	return chiefdomsData
+}
+
 func ChiefdomsByDistrict(districtName string) []string {
 	demographics := LocalDemographics()
 	var chiefdomsData []string

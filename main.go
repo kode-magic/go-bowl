@@ -8,6 +8,6 @@ import (
 func main() {
 	fmt.Println("*******************************************************************************")
 	fmt.Println("\t\t\t\tGO BOWL")
-	demographics.DistrictsByRegion("Western")
+	demographics.RegionChiefdoms("Western")
 	fmt.Println("*******************************************************************************")
 }
