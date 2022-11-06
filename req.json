@@ -1,0 +1,37 @@
+{
+  "supplierId": "7e415078-32ce-11ed-9f03-acde48001122",
+  "dateSupplied": "2022-09-12T00:00:00.000Z",
+  "supplyInvoice": "OPN2527",
+  "items": [
+    {
+      "itemName": "Light Zinc",
+      "description": "Best light common zinc",
+      "measurement": "Bundle",
+      "unitPerMeasurement": 10,
+      "quantity": 15,
+      "buyingPricePerMeasurement": 500.00,
+      "sellingPricePerMeasurement": 700.00,
+      "sellingPricePerUnit": 80.00
+    },
+    {
+      "itemName": "5.8 Iron Rod",
+      "description": "Biggest 5.8 iron rod",
+      "measurement": "Ton",
+      "unitPerMeasurement": 96,
+      "quantity": 10,
+      "buyingPricePerMeasurement": 7500.00,
+      "sellingPricePerMeasurement": 10700.00,
+      "sellingPricePerUnit": 120.00
+    },
+    {
+      "itemName": "4 Inch Nail",
+      "description": "Nails in the size of 4 inches",
+      "measurement": "Cartoon",
+      "unitPerMeasurement": 50,
+      "quantity": 20,
+      "buyingPricePerMeasurement": 420.00,
+      "sellingPricePerMeasurement": 720.00,
+      "sellingPricePerUnit": 15.00
+    }
+  ]
+}
