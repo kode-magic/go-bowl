@@ -1,4 +1,6 @@
 ### Go Bowl simple rabbitmq Clean Architecture package
+<img src="https://i.pinimg.com/564x/99/1c/6a/991c6a65099c731a52e926a8b6a5ddba.jpg" height="600px" width="300%" />
+<br /> <br />
 #### This package is a wrapper around [RabbitMQ](https://www.rabbitmq.com/) and [Amqp](https://github.com/rabbitmq/amqp091)
 #### The syntax is very simple and can be easily understood
 
